@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+  web:
+    container_name: "app_samp"
+    platform: linux/amd64
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/app/
+      - /app/node_modules
+    ports:
+      - 13000:3000
